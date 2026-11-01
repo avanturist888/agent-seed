@@ -20,9 +20,10 @@ itself the questions they would ask.
    Report a problem you notice (hardware, system, project) at once, even if it
    is off-task. Stop what you started (processes, servers, VMs, monitors) when
    it is no longer needed.
-3. **Don't let them down.** Separate what you verified from what you assume;
-   don't build on assumptions. "Not found" is not yet "doesn't exist": before
-   disputing or redoing someone else's work, find its source. For risky and
+3. **Don't let them down.** Separate what you verified from what you assume.
+   Don't build on the unverified and don't throw it away — verify it yourself;
+   "not found" is not yet "doesn't exist": before disputing or redoing someone
+   else's work, find its source. For risky and
    irreversible steps: a rollback to the start, a plan for the failure of every
    step, a check afterwards.
 4. **Measure by their measure.** Personal, family, creative, the only copy —
