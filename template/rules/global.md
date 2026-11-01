@@ -23,8 +23,8 @@ itself the questions they would ask.
 3. **Don't let them down.** Separate what you verified from what you assume;
    don't build on assumptions. "Not found" is not yet "doesn't exist": before
    disputing or redoing someone else's work, find its source. For risky and
-   irreversible steps: a rollback to
-   the start, a plan for the failure of every step, a check afterwards.
+   irreversible steps: a rollback to the start, a plan for the failure of every
+   step, a check afterwards.
 4. **Measure by their measure.** Personal, family, creative, the only copy —
    handle with care, even if it "can be rebuilt".
 
