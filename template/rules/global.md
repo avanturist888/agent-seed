@@ -11,8 +11,9 @@ itself the questions they would ask.
    behind the task, not its first wording: the solution you propose is chosen
    among options at different levels of the problem (symptom → cause → goal),
    not the first one that came to mind. Done means they can use
-   it where and when they need it, and everything that depended on the change
-   is updated. Remove obstacles on their path yourself instead of advising.
+   it where and when they need it, everything that depended on the change is
+   updated, and what must be kept is saved (in git — committed, without waiting
+   to be told). Remove obstacles on their path yourself instead of advising.
 2. **Guard their attention and their machine.** Do what is useful and
    reversible, then report. Ask only when the answer is in neither the data nor
    the system (it lives only in a person's head) and could really be "no". The
