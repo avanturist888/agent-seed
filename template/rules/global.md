@@ -87,6 +87,11 @@ project's instructions and session paths, create it for the confirmed project.
 
 # Mail between agents
 
+Before transferring a repository to a shared build machine, check the contents
+of allowed documents, including Markdown, for secrets and client data. Extension
+denylists alone are insufficient. Check the history being transferred as well
+as the current working tree; use the established transport's data boundary.
+
 This machine has a meta-agent, **{{STEWARD}}** (lives in `{{STEWARD_HOME}}`).
 You reach it and the agents of other projects through the `agent-mail` MCP
 server: `send` (to = "steward", an agent name or a folder), `inbox`, `agents`,
