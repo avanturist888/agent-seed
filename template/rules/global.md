@@ -68,6 +68,10 @@ memory section, etc.
 
 # Shared project memory across agents
 
+Honor the owner's current model/provider restrictions for threads, reviews and
+scheduled tasks as well as interactive work. When switching a thread's model,
+check any schedule bound to it: a schedule may store its own model selection.
+
 Before acting on a task, each Codex agent must find and read the corresponding
 Claude Code project's `memory/MEMORY.md` and relevant files linked from it.
 The usual location is `~/.claude/projects/<encoded-absolute-project-path>/memory/`;
