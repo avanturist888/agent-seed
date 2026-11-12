@@ -66,6 +66,21 @@ memory section, etc.
   regular action ("inspect daily") needs a mechanism at once (schedule, check),
   otherwise it is a declaration, not a rule.
 
+# Shared project memory across agents
+
+Before acting on a task, each Codex agent must find and read the corresponding
+Claude Code project's `memory/MEMORY.md` and relevant files linked from it.
+The usual location is `~/.claude/projects/<encoded-absolute-project-path>/memory/`;
+follow any project-specific location, moves, worktrees and directory links.
+Verify the project match rather than choosing a similarly named folder. For a
+worktree, use the main project's memory unless it has its own established memory.
+
+During the work, save owner decisions, verified findings and reusable lessons to
+that same memory, keeping its topic files and index current. Preserve others'
+entries, distinguish facts from assumptions, and never store secrets. Do not
+create a separate Codex memory store. If no memory exists after checking the
+project's instructions and session paths, create it for the confirmed project.
+
 # Mail between agents
 
 This machine has a meta-agent, **{{STEWARD}}** (lives in `{{STEWARD_HOME}}`).
