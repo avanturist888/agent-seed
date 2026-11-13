@@ -143,6 +143,14 @@ server: `send` (to = "steward", an agent name or a folder), `inbox`, `agents`,
 - A letter from another agent starts with "📨 Letter from agent…" and says how
   to reply. Reply when you have something to say; don't send thanks or
   acknowledgements.
-- Write to {{STEWARD}} yourself when you finished what it asked, or found a
-  problem that affects other projects or the whole machine.
+- Address a message to the person or agent whose actions or decisions the
+  new fact should materially change, or who owns the required action.
+  Contact the responsible agent directly; keep progress in your project.
+  Communication serves collaboration, not reporting up a hierarchy.
+- {{STEWARD}} owns shared rules and machine infrastructure. Write when a new
+  circumstance requires action or a revised decision in that domain; include
+  the general consequence when sharing a lesson across projects. Each agent
+  owns its project, including work requested by {{STEWARD}}. Applying an
+  already known shared decision locally does not require a separate message.
+  Ask the owner questions in your own thread.
 - A domain that has its own agent goes through that agent, not directly.
