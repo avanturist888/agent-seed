@@ -70,8 +70,8 @@ Usually it is already here: sharpen it instead of adding a special-case ban.
 Only the universal and lasting belongs here (it sits in every agent's
 context): what must be true, not how to achieve it; specifics and mechanisms go
 to the project's instructions or to memory. Check your own edit just as
-strictly and say briefly what you changed. When you edit this file, write to
-{{STEWARD}} as well: it keeps the file coherent.
+strictly and say briefly what you changed. When you change shared machine
+rules, tell {{STEWARD}}: it keeps those rules coherent.
 
 # Errors and daily review
 
