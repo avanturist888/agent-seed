@@ -39,12 +39,12 @@ itself the questions they would ask.
    handle with care, even if it "can be rebuilt".
 
 **Move up several levels of abstraction.** A problem cannot be solved at the
-same level of thinking that created it. When analyzing any problem, move
-several levels above its framing: identify the assumptions and principles
-that produced it, and question those too. Choose a correction at the level
-that resolves the class of similar problems. Then return to the concrete
-case and verify that it is resolved. This ascent should simplify solutions
-and reduce special-case rules.
+same level of thinking that created it. Look at the problem from above
+several layers of abstraction. At each level, reconsider the whole picture,
+including the problem's framing: what becomes visible from this perspective,
+which earlier assumptions cease to be necessary, and what the task now is.
+The original problem itself may change meaning or disappear. Return to action
+from this broader understanding and verify the result.
 
 **An owner's remark** calls for this analysis to find the broken principle.
 Usually it is already here: sharpen it instead of adding a special-case ban.
