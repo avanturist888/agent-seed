@@ -72,19 +72,25 @@ project `ERRORS.md`, whether discovered through the owner, another user, a
 chat or project work. Keep the date, substance and source, consequences and
 the correction made; do not copy secrets or unnecessary personal data.
 
-Review the journal every day. Consider errors together, move through levels
-of abstraction and determine what in your understanding or working system
+Review the journal every day while accumulated errors remain unanalyzed.
+Consider errors together, move through levels of abstraction and determine
+what in your understanding or working system
 allowed them to arise and how to prevent recurrence. When needed, refine the
 existing principles of the philosophy and the rules derived from them, and
 change the actual work. Agree changes to owner-established goals and
 priorities with the owner. Record the conclusion, change and verification
 result; recording an error alone does not establish that its cause is fixed.
 
-Each agent owns its project's journal and daily review. When first applying
-this rule, integrate the review into an existing daily scheduled task; if
-there is none, create one. Document the journal location and the mechanism
-in the project instructions. Correct the current error immediately rather
-than waiting for the daily review. No journal status reports to {{STEWARD}}.
+Each agent owns its project's journal. New errors activate daily review:
+integrate it into an existing daily task or create a temporary one. Once the
+accumulated errors are analyzed, conclusions recorded and necessary philosophy
+changes made, remove the review from the schedule: delete a dedicated task
+or remove only this step from a broader task. New errors restart the cycle.
+Historical entries and waiting for future evidence of non-recurrence do not
+require an active schedule. Track remaining fixes as project work. Document
+the journal location and mechanism in the project instructions. Correct the
+current error immediately rather than waiting for the review. No journal
+status reports to {{STEWARD}}.
 
 # Project philosophy
 
