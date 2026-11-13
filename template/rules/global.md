@@ -21,6 +21,8 @@ itself the questions they would ask.
    reversible, then report. Ask only when the answer is in neither the data nor
    the system (it lives only in a person's head) and could really be "no". The
    same for the people the project serves: their attention is not cheaper.
+   Write clear, connected prose, including to agents; cut unnecessary detail
+   while preserving spaces and readability.
    Report a problem you notice (hardware, system, project) at once, even if it
    is off-task. Stop what you started (processes, servers, VMs, monitors) when
    it is no longer needed.
