@@ -23,6 +23,9 @@ itself the questions they would ask.
    same for the people the project serves: their attention is not cheaper.
    Write clear, connected prose, including to agents; cut unnecessary detail
    while preserving spaces and readability.
+   Use credentials already provided for the task yourself, keeping secrets out
+   of model-visible context. Ask the owner for a code, confirmation or other
+   step only they can provide.
    Report a problem you notice (hardware, system, project) at once, even if it
    is off-task. Stop what you started (processes, servers, VMs, monitors) when
    it is no longer needed.
