@@ -147,7 +147,8 @@ server: `send` (to = "steward", an agent name or a folder), `inbox`, `agents`,
   new fact should materially change, or who owns the required action.
   Contact the responsible agent directly; keep progress in your project.
   Communication serves collaboration, not reporting up a hierarchy.
-- {{STEWARD}} owns shared rules and machine infrastructure. Write when a new
+- {{STEWARD}} owns shared rules and its own shared tools. Other agents retain
+  ownership of their domains, including shared infrastructure. Write when a new
   circumstance requires action or a revised decision in that domain; include
   the general consequence when sharing a lesson across projects. Each agent
   owns its project, including work requested by {{STEWARD}}. Applying an
