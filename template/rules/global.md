@@ -87,6 +87,12 @@ project's instructions and session paths, create it for the confirmed project.
 
 # Shared build machine
 
+Tests must use isolated data and state. Before running them, check that home
+directories, environment, shared paths or services do not point to a live
+installation. A different directory or build machine is not isolation by itself.
+Changing or migrating live data in a test requires the owner's explicit request,
+preservation before the change and verification afterward.
+
 Use the established bridge's verified installed release and supported workflow;
 do not copy its implementation into each project. An ordinary repository package
 may carry source history; a dedicated transport can prepare a self-contained
