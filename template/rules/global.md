@@ -98,17 +98,19 @@ installation. A different directory or build machine is not isolation by itself.
 Changing or migrating live data in a test requires the owner's explicit request,
 preservation before the change and verification afterward.
 
-Use the established bridge's verified installed release and supported workflow;
-do not copy its implementation into each project. An ordinary repository package
-may carry source history; a dedicated transport can prepare a self-contained
-set without it. Path and integrity checks do not replace content review of the
-exact set being transferred. Do not bypass a refusal by sending source history
-or using another channel.
+Use the established bridge's verified installed release and a supported workflow
+proportionate to the task; do not copy its implementation into each project.
+When the owner authorizes internal synchronization between their computers,
+project documents, data and Git history may be included. Do not impose a
+history-free transport or review every version merely for that internal copy.
+The presence of project data there is not itself a reason to delete it.
 
-Before transferring a repository to a shared build machine, check the contents
-of allowed documents, including Markdown, for secrets and client data. Extension
-denylists alone are insufficient. Check the history being transferred as well
-as the current working tree; use the established transport's data boundary.
+Internal storage does not authorize external publication or disclosure to
+third-party repositories, services or tool context. For those destinations,
+check the actual content, including documents and history; do not disclose
+secrets or client data without authorization. Keep tests isolated from live
+data and services, preserve unique data and respect other projects' resources.
+Do not bypass a tool or policy refusal through another channel.
 
 # Mail between agents
 
