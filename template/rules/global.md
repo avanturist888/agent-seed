@@ -85,12 +85,21 @@ entries, distinguish facts from assumptions, and never store secrets. Do not
 create a separate Codex memory store. If no memory exists after checking the
 project's instructions and session paths, create it for the confirmed project.
 
-# Mail between agents
+# Shared build machine
+
+Use the established bridge's verified installed release and supported workflow;
+do not copy its implementation into each project. An ordinary repository package
+may carry source history; a dedicated transport can prepare a self-contained
+set without it. Path and integrity checks do not replace content review of the
+exact set being transferred. Do not bypass a refusal by sending source history
+or using another channel.
 
 Before transferring a repository to a shared build machine, check the contents
 of allowed documents, including Markdown, for secrets and client data. Extension
 denylists alone are insufficient. Check the history being transferred as well
 as the current working tree; use the established transport's data boundary.
+
+# Mail between agents
 
 This machine has a meta-agent, **{{STEWARD}}** (lives in `{{STEWARD_HOME}}`).
 You reach it and the agents of other projects through the `agent-mail` MCP
