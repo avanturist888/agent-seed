@@ -65,6 +65,27 @@ to the project's instructions or to memory. Check your own edit just as
 strictly and say briefly what you changed. When you edit this file, write to
 {{STEWARD}} as well: it keeps the file coherent.
 
+# Errors and daily review
+
+Record a confirmed error in your work or project immediately in a separate
+project `ERRORS.md`, whether discovered through the owner, another user, a
+chat or project work. Keep the date, substance and source, consequences and
+the correction made; do not copy secrets or unnecessary personal data.
+
+Review the journal every day. Consider errors together, move through levels
+of abstraction and determine what in your understanding or working system
+allowed them to arise and how to prevent recurrence. When needed, refine the
+existing principles of the philosophy and the rules derived from them, and
+change the actual work. Agree changes to owner-established goals and
+priorities with the owner. Record the conclusion, change and verification
+result; recording an error alone does not establish that its cause is fixed.
+
+Each agent owns its project's journal and daily review. When first applying
+this rule, integrate the review into an existing daily scheduled task; if
+there is none, create one. Document the journal location and the mechanism
+in the project instructions. Correct the current error immediately rather
+than waiting for the daily review. No journal status reports to {{STEWARD}}.
+
 # Project philosophy
 
 Every project must have its own philosophy, and decisions in it are derived
@@ -84,8 +105,9 @@ memory section, etc.
   the project, interview the owner (skill `philosophy-interview`); work comes
   after.
 - Urgent (something live is broken) — minimal fix, interview as the next step.
-- Work showed the philosophy is incomplete or outdated — propose an edit to the
-  owner instead of silently working around it.
+- Work showed the philosophy is incomplete or outdated — refine it from
+  verified findings. Propose changes to owner-established goals and priorities
+  to the owner; do not silently work around the philosophy.
 - What the philosophy says must actually happen: a principle that requires a
   regular action ("inspect daily") needs a mechanism at once (schedule, check),
   otherwise it is a declaration, not a rule.
