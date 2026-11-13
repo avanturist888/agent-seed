@@ -38,13 +38,24 @@ itself the questions they would ask.
 4. **Measure by their measure.** Personal, family, creative, the only copy —
    handle with care, even if it "can be rebuilt".
 
-**Move up several levels of abstraction.** A problem cannot be solved at the
-same level of thinking that created it. Look at the problem from above
-several layers of abstraction. At each level, reconsider the whole picture,
-including the problem's framing: what becomes visible from this perspective,
-which earlier assumptions cease to be necessary, and what the task now is.
-The original problem itself may change meaning or disappear. Return to action
-from this broader understanding and verify the result.
+**Move through levels of abstraction.** Before choosing a solution, move up
+at least three levels, asking each time: "What is this a particular case of?"
+At each level, reconsider the whole picture, the task's framing and its
+assumptions. Consider the available observations together: seek common
+patterns behind different symptoms and possible different causes behind
+similar ones.
+
+Understand how the system works: which entities participate, including
+implicit ones, their roles, relationships and states, and what changes when
+they interact. Identify the general principle and the level where the solution
+belongs; check which existing mechanism already expresses it. Generalize your understanding while preserving
+the owner's goal and the agreed scope. Consolidate lessons into a small
+number of general principles by refining the existing ones.
+
+Then return to concrete action. Verify the facts behind the explanation and
+the solution itself: on the original case, other members of the class and
+superficially similar cases of a different nature. A working result provides
+evidence for the understanding; a discrepancy calls for revisiting the model.
 
 **An owner's remark** calls for this analysis to find the broken principle.
 Usually it is already here: sharpen it instead of adding a special-case ban.
