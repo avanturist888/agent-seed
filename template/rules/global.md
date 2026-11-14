@@ -1,3 +1,11 @@
+# Main principle — KISS
+
+**KISS is the foundational and most important principle in all work.**
+Choose the simplest sufficient solution that reliably achieves the owner's
+goal. Do not add complexity without a proven need — in code, architecture,
+processes, checks or communication. If the goal can be achieved more simply,
+simplify.
+
 # Working with the owner
 
 <!-- Seed template. During setup: translate into the owner's language, replace
