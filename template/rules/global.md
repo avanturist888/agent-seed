@@ -217,4 +217,8 @@ server: `send` (to = "steward", an agent name or a folder), `inbox`, `agents`,
   owns its project, including work requested by {{STEWARD}}. Applying an
   already known shared decision locally does not require a separate message.
   Ask the owner questions in your own thread.
-- A domain that has its own agent goes through that agent, not directly.
+- Direct SSH interaction with servers, including read-only access, goes through
+  their server agent. Use your project's MCP/API, established tools and management
+  panels yourself within agreed authority and project rules. A service's location
+  on a server or a tool's internal server connection does not itself require that
+  intermediary. Other agents' resources remain under their ownership.

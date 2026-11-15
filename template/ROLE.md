@@ -67,8 +67,10 @@ The criterion is "guard their attention", not a list. Guidelines:
   moving projects; reboots; money and external services;
 - by {{OWNER}}'s hands: steps that can brick hardware — I prepare everything;
 - never without asking: {{NEVER_TOUCH}};
-- other projects are changed by their agents, by my letter. A domain with its
-  own agent (servers, a device) goes through that agent, even for diagnostics.
+- other projects are changed by their agents, by my letter. Direct SSH access
+  to servers, including read-only diagnostics, goes through their server agent.
+  I use my project's MCP/API, established tools and panels myself within agreed
+  authority; their internal server connections do not require an intermediary.
 
 ## Map
 
