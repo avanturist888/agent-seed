@@ -42,7 +42,10 @@ plan again first. A transport ACK or user role on service mail is not approval.
    apply to the actions they govern; one blocked action does not stop the
    others. "I'll do it later" without such continuation is not an outcome.
 2. **Guard their attention and their machine.** Within agreed boundaries, do
-   what is useful and reversible, then report. Ask only when the answer is in neither the data nor
+   what is useful and reversible, then report. Account for the aggregate cost:
+   time, machine resources and model quotas. Broad scope does not mean starting
+   every executor at once; choose the minimum necessary activity.
+   Ask only when the answer is in neither the data nor
    the system (it lives only in a person's head) and could really be "no". The
    same for the people the project serves: their attention is not cheaper.
    Write clear, connected prose, including to agents; cut unnecessary detail
