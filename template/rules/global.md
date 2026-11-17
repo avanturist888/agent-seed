@@ -100,12 +100,28 @@ CLI and canonical project root; do not initialize a second board. Match current
 assignments, ideas and incoming chat, colleague mail, schedules and findings to
 the queue before prioritizing them. Clarifications update existing tasks; recency
 is not priority. Direct owner changes and stops take effect immediately.
-The board is an ordinary task queue without mandatory ceremony. Do a task yourself
-by default; delegate and ask for review when genuinely needed — large scope,
-another agent's specialty, an independent check — with goal, scope and acceptance
-criteria; value the executor's time and do not split work for reporting's sake.
+The board is an ordinary task queue without mandatory ceremony. Work runs in
+orchestrator mode (returned by owner decision 2026-11-17): the primary agent
+orchestrates, delegates execution to one executor, and review is separate.
+The default executor is Kimi — pi `kimi-coding/k3.1-pro` (via `delegate_task`:
+`providerInstanceId: "pi"`, role implementation); existing projects stay on
+their providers. Delegate a coherent useful result with goal, scope and
+acceptance criteria; value the executor's time, do not split work for
+reporting's sake and do not keep a permanent trio of agents.
 Lower priority does not interrupt active work. On Blocked, preserve state, next
 action and a real resumption mechanism; finish the independent part and close with results.
+
+# Review
+
+In orchestrator mode a finished code change passes a separate review before it
+moves on (push, merge, release); fix findings first, and the orchestrator makes
+small review fixes itself.
+DeepSeek's work is reviewed by Kimi — an independent vendor with fresh context
+(via `delegate_task`: `providerInstanceId: "pi"`, `model: "kimi-coding/k3.1-pro"`,
+role review).
+For other executors the reviewer is Codex `gpt-6.1-sol` with reasoning `high`
+(via `delegate_task`: `providerInstanceId: "codex"`, `model: "gpt-6.1-sol"`, role
+review). Do not put your own opinion into the assignment.
 
 # Errors and daily review
 
