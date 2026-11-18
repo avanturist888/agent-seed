@@ -116,12 +116,10 @@ action and a real resumption mechanism; finish the independent part and close wi
 In orchestrator mode a finished code change passes a separate review before it
 moves on (push, merge, release); fix findings first, and the orchestrator makes
 small review fixes itself.
-DeepSeek's work is reviewed by Kimi — an independent vendor with fresh context
-(via `delegate_task`: `providerInstanceId: "pi"`, `model: "kimi-coding/k3.1-pro"`,
-role review).
-For other executors the reviewer is Codex `gpt-6.1-sol` with reasoning `high`
-(via `delegate_task`: `providerInstanceId: "codex"`, `model: "gpt-6.1-sol"`, role
-review). Do not put your own opinion into the assignment.
+The reviewer for any executor, DeepSeek included, is Kimi 3.1 (owner decision
+2026-11-18): pi `kimi-coding/k3.1-pro` (via `delegate_task`:
+`providerInstanceId: "pi"`, role review). Do not put your own opinion into the
+assignment.
 
 # Errors and daily review
 
