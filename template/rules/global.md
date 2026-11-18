@@ -116,9 +116,11 @@ action and a real resumption mechanism; finish the independent part and close wi
 In orchestrator mode a finished code change passes a separate review before it
 moves on (push, merge, release); fix findings first, and the orchestrator makes
 small review fixes itself.
-The reviewer for any executor, DeepSeek included, is Kimi 3.1 (owner decision
-2026-11-18): pi `kimi-coding/k3.1-pro` (via `delegate_task`:
-`providerInstanceId: "pi"`, role review). Do not put your own opinion into the
+Flow (owner decision 2026-11-18): the executor is Kimi 3.1 (pi
+`kimi-coding/k3.1-pro`), the reviewer is DeepSeek Flash (pi
+`deepseek/deepseek-flash`) — an independent vendor and fresh context against
+the executor. Both via `delegate_task`: `providerInstanceId: "pi"`, roles
+implementation and review. Do not put your own opinion into the reviewer's
 assignment.
 
 # Errors and daily review
