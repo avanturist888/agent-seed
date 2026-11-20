@@ -103,8 +103,9 @@ is not priority. Direct owner changes and stops take effect immediately.
 The board is an ordinary task queue without mandatory ceremony. Work runs in
 orchestrator mode (returned by owner decision 2026-11-17): the primary agent
 orchestrates, delegates execution to one executor, and review is separate.
-The default executor is Kimi — pi `kimi-coding/k3.1-pro` (via `delegate_task`:
-`providerInstanceId: "pi"`, role implementation); existing projects stay on
+The default executor is Gemini 4 Neon (instance `antigravity`, `gemini-4-neon`,
+`thought_level: "high"`; via `delegate_task`: `providerInstanceId: "antigravity"`,
+role implementation); existing projects stay on
 their providers. Delegate a coherent useful result with goal, scope and
 acceptance criteria; value the executor's time, do not split work for
 reporting's sake and do not keep a permanent trio of agents.
@@ -116,12 +117,12 @@ action and a real resumption mechanism; finish the independent part and close wi
 In orchestrator mode a finished code change passes a separate review before it
 moves on (push, merge, release); fix findings first, and the orchestrator makes
 small review fixes itself.
-Flow (owner decision 2026-11-18): the executor is Kimi 3.1 (pi
-`kimi-coding/k3.1-pro`), the reviewer is DeepSeek Flash (pi
-`deepseek/deepseek-flash`) — an independent vendor and fresh context against
-the executor. Both via `delegate_task`: `providerInstanceId: "pi"`, roles
-implementation and review. Do not put your own opinion into the reviewer's
-assignment.
+Flow (owner decision 2026-11-20): the executor is Gemini 4 Neon (instance
+`antigravity`, `gemini-4-neon`), the reviewer is DeepSeek Flash (instance
+`deepseek`, `deepseek-flash[1m]`) — an independent vendor and fresh context against
+the executor. Both via `delegate_task`: `providerInstanceId: "antigravity"` /
+`"deepseek"`, roles implementation and review. Do not put your own opinion into
+the reviewer's assignment.
 
 # Errors and daily review
 
