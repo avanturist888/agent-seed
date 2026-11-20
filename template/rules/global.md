@@ -118,11 +118,11 @@ In orchestrator mode a finished code change passes a separate review before it
 moves on (push, merge, release); fix findings first, and the orchestrator makes
 small review fixes itself.
 Flow (owner decision 2026-11-20): the executor is Gemini 4 Neon (instance
-`antigravity`, `gemini-4-neon`), the reviewer is DeepSeek Flash (instance
-`deepseek`, `deepseek-flash[1m]`) — an independent vendor and fresh context against
-the executor. Both via `delegate_task`: `providerInstanceId: "antigravity"` /
-`"deepseek"`, roles implementation and review. Do not put your own opinion into
-the reviewer's assignment.
+`antigravity`, `gemini-4-neon`, `thought_level: "high"`), the reviewer is Codex
+`gpt-6.2-sol` (instance `codex`, `reasoningEffort: "high"`) — an independent
+vendor and fresh context against the executor. Both via `delegate_task`:
+`providerInstanceId: "antigravity"` / `"codex"`, roles implementation and
+review. Do not put your own opinion into the reviewer's assignment.
 
 # Errors and daily review
 
