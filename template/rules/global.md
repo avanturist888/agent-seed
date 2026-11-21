@@ -117,9 +117,9 @@ action and a real resumption mechanism; finish the independent part and close wi
 In orchestrator mode a finished code change passes a separate review before it
 moves on (push, merge, release); fix findings first, and the orchestrator makes
 small review fixes itself.
-Flow (owner decision 2026-11-20): the executor is Gemini 4 Neon (instance
+Flow (owner decisions 2026-11-20 / 2026-11-22): the executor is Gemini 4 Neon (instance
 `antigravity`, `gemini-4-neon`, `thought_level: "high"`), the reviewer is Codex
-`gpt-6.2-sol` (instance `codex`, `reasoningEffort: "high"`) — an independent
+`gpt-6.2-astra` (instance `codex`, `reasoningEffort: "high"`) — an independent
 vendor and fresh context against the executor. Both via `delegate_task`:
 `providerInstanceId: "antigravity"` / `"codex"`, roles implementation and
 review. Do not put your own opinion into the reviewer's assignment.
