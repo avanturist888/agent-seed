@@ -6,11 +6,11 @@ follows, and **mail** so agents of different projects can talk to each other.
 
 It is not an app you install. It is instructions your agent reads and then
 grows the system in *your* environment — your names, your language, your
-folders, your tools (Claude Code, Codex, T3 Code or plain terminals).
+folders, your tools (Claude Code, Codex, Antigravity, T3 Code or plain terminals).
 
 ## How to use
 
-Open your AI coding agent (Claude Code, Codex, …) in your home folder and say:
+Open your AI coding agent (Claude Code, Codex, Antigravity, …) in your home folder and say:
 
 > Read https://github.com/avanturist888/agent-seed — start with SEED.md — and
 > grow a steward for me.
@@ -29,6 +29,7 @@ agent.
 | [template/rules/global.md](template/rules/global.md) | shared rules for all agents: four principles, project philosophy, mail |
 | [template/ROLE.md](template/ROLE.md) | the steward's own instructions: habits, authority, round, map |
 | [skills/philosophy-interview](skills/philosophy-interview/SKILL.md) | how an agent interviews you about a project's "why" |
+| [hooks/](hooks/claude_memory_hook.py) | `SessionStart` hook injecting Claude Code project `MEMORY.md` into Antigravity or Codex |
 | [mail/](mail/README.md) | agent-mail: MCP server + CLI + hook, one stdlib-only Python file |
 
 ## Where it comes from
@@ -50,7 +51,7 @@ generalized. Your steward will grow the same way: from your remarks.
 Это не программа, а инструкции. Ваш агент читает их и выращивает систему в
 вашей среде: с вашими именами, языком, папками и инструментами.
 
-Откройте агента (Claude Code, Codex…) в домашней папке и скажите:
+Откройте агента (Claude Code, Codex, Antigravity…) в домашней папке и скажите:
 
 > Прочитай https://github.com/avanturist888/agent-seed — начни с SEED.md — и
 > вырасти мне мета-агента.

@@ -6,16 +6,22 @@ library, no dependencies: [`agent_mail.py`](agent_mail.py).
 - **An agent is a folder** — the working directory its sessions run in.
 - **Every letter lands in the recipient's inbox** (`~/.agent-mail/inbox/…`),
   then the recipient is **woken** according to its registry entry.
-- **The envelope tells how to reply** (`send` to the sender's folder) and asks
-  not to answer thanks — that, plus a limit of 6 letters per pair in 10
-  minutes, keeps agents from ping-pong.
+- **Every `send` requires `why` and `why_this`** — what concrete action or
+  decision is needed from the recipient, and why this request instead of other
+  options (which alternative was considered and why it is worse; one sentence
+  if there is genuinely no alternative).
+- **The envelope frames the letter safely**: it marks the letter as a colleague
+  service message (not owner authority), wraps the rationale and body in a
+  dynamic backtick fence longer than any backtick run inside them, tells how to
+  reply (`send` to the sender's folder), and asks not to answer thanks — that,
+  plus a limit of 6 letters per pair in 10 minutes, keeps agents from ping-pong.
 
 ## Interfaces
 
 | Face | Command |
 |---|---|
-| MCP server (stdio) | `python agent_mail.py mcp` — tools `send`, `inbox`, `agents`, `register`, `log` |
-| CLI | `python agent_mail.py send <to> <text\|->`, `inbox [--peek]`, `agents`, `register <name> [--wake M] [--session ID] [--steward]`, `log [--hours N]` |
+| MCP server (stdio) | `python agent_mail.py mcp` — tools `send(to, message, why, why_this)`, `inbox`, `agents`, `register`, `log` |
+| CLI | `python agent_mail.py send <to> --why "..." --why-this "..." <text\|->`, `inbox [--peek]`, `agents`, `register <name> [--wake M] [--session ID] [--steward]`, `log [--hours N]` |
 | Claude Code hook | `python agent_mail.py hook` on `SessionStart` and `UserPromptSubmit`: shows unread letters, remembers the session id for waking |
 
 `to` is an agent name, a folder path, or `steward`.
@@ -38,7 +44,7 @@ the fallback when waking fails.
 `$AGENT_MAIL_HOME` (default `~/.agent-mail`):
 
 - `agents.json` — folder → `{name, wake, session, thread, steward, args}`;
-- `mail.jsonl` — journal of every letter;
+- `mail.jsonl` — journal of every letter (including `why` and `why_this`);
 - `inbox/<folder-key>/*.json`, read letters move to `read/`;
 - `wake.log` — output of headless wake-ups (look here when a woken agent seems
   silent).
@@ -48,7 +54,10 @@ the fallback when waking fails.
 ```sh
 python agent_mail.py register alice --steward       # in folder A
 python agent_mail.py register bob                   # in folder B
-python agent_mail.py send steward "ping from bob"   # in folder B
+python agent_mail.py send steward \
+  --why "confirm mail delivery works" \
+  --why-this "live end-to-end check; no simpler substitute" \
+  "ping from bob"                                   # in folder B
 python agent_mail.py inbox                          # in folder A → the letter
 ```
 

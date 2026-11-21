@@ -21,11 +21,17 @@ Find out yourself:
 - OS, shell, home folder, where projects live (look for folders full of git
   repos).
 - Which agent harness you run in and which are installed: Claude Code
-  (`claude --version`), Codex (`codex --version`), OpenCode, Cursor, Gemini CLI,
-  other. Where each reads **global instructions** — e.g. Claude Code:
-  `~/.claude/CLAUDE.md` (supports `@path` imports); Codex: `~/.codex/AGENTS.md`;
-  others: check their docs. Where each registers **MCP servers** (Claude Code:
-  `claude mcp add -s user …`; Codex: `~/.codex/config.toml` `[mcp_servers.*]`).
+  (`claude --version`), Codex (`codex --version`), Antigravity (standalone or
+  under T3 Code ACP), OpenCode, Cursor, Gemini CLI, other. Where each reads
+  **global instructions** — e.g. Claude Code: `~/.claude/CLAUDE.md` (supports
+  `@path` imports); Codex: `~/.codex/AGENTS.md`; Antigravity:
+  `~/.gemini/config/AGENTS.md` (and under T3 Code ACP:
+  `~/.t3/userdata/providers/antigravity/<hash>/config/AGENTS.md`, with a
+  **24,000-byte per-file limit**); others: check their docs. Where each
+  registers **MCP servers** and **hooks** — Claude Code:
+  `claude mcp add -s user …` and `~/.claude/settings.json`; Codex:
+  `~/.codex/config.toml` `[mcp_servers.*]`; Antigravity: `mcp_config.json` and
+  `hooks.json` in its config directory (write JSON configs as UTF-8 without BOM).
 - Whether an orchestrator runs the sessions (T3 Code: `~/.t3`, `t3` CLI,
   `T3CODE_THREAD_ID` in your environment) or the person works in plain
   terminals / an IDE.
@@ -64,12 +70,13 @@ into their language, fill the `{{…}}` placeholders):
 
 ```
 <home>/
-  ROLE.md            ← from template/ROLE.md: who the steward is, habits, authority, map, round
-  rules/global.md    ← from template/rules/global.md: shared rules for ALL agents
-  memory/            ← facts that outlive conversations (one fact per file + an index)
+  ROLE.md                       ← from template/ROLE.md: who the steward is, habits, authority, map, round
+  rules/global.md               ← from template/rules/global.md: shared rules for ALL agents
+  memory/                       ← facts that outlive conversations (one fact per file + an index)
   skills/philosophy-interview/SKILL.md
   tools/agent_mail.py
-  README.md          ← how to restore this on a new machine
+  tools/claude_memory_hook.py   ← from hooks/claude_memory_hook.py (when multiple harnesses share Claude Code memory)
+  README.md                     ← how to restore this on a new machine
 ```
 
 - Fill the map in `ROLE.md` with the real project folders you found.
@@ -89,11 +96,34 @@ installed (Phase 0 list):
 
 - Claude Code: `~/.claude/CLAUDE.md` containing `@<home>/rules/global.md`
   (keep anything already there; back it up first).
-- Codex and others without imports: back up their global file, then write
-  `rules/global.md` into it between markers (`<!-- agent-seed:start -->` …
+- Antigravity: symlink (or copy) `<home>/rules/global.md` into
+  `~/.gemini/config/AGENTS.md` (and under T3 Code ACP into
+  `~/.t3/userdata/providers/antigravity/<hash>/config/AGENTS.md`). Keep every
+  rule file strictly under **24,000 UTF-8 bytes** — if rules grow, split
+  machine/tool rules into a separate `rules/global-tools.md` referenced from
+  `global.md`. Write Antigravity JSON configs (`mcp_config.json`, `hooks.json`)
+  as **UTF-8 without BOM**.
+- Codex and others without imports: back up their global file, then symlink or
+  write `rules/global.md` into it between markers (`<!-- agent-seed:start -->` …
   `<!-- agent-seed:end -->`), keeping what the person had outside the markers.
-  Note in `ROLE.md` that it must be regenerated after every edit (or add a
+  Note in `ROLE.md` that a copy must be regenerated after every edit (or add a
   small sync script).
+- Project instructions across harnesses: keep per-project instructions in
+  `AGENTS.md` and leave a one-line `CLAUDE.md` containing `@AGENTS.md` (Claude
+  Code does not read `AGENTS.md` directly). Harnesses that do not expand
+  `@path` imports automatically (such as Codex) read imported files themselves.
+- Shared Claude Code project memory (`SessionStart` hook): when Antigravity (or
+  Codex) runs alongside Claude Code, copy `hooks/claude_memory_hook.py` to
+  `<home>/tools/claude_memory_hook.py` and wire it as a `SessionStart` hook so
+  sessions automatically receive the project's `MEMORY.md`:
+  - Antigravity `hooks.json` (UTF-8 without BOM; quote the path in case `<home>` contains spaces; honors `CLAUDE_CONFIG_DIR` or `--claude-dir`; note `SessionStart` is a flat array of handler objects):
+    ```json
+    {"claude-memory": {"SessionStart": [
+      {"type": "command", "command": "<py> -I \"<home>/tools/claude_memory_hook.py\" --format antigravity", "timeout": 5}
+    ]}}
+    ```
+  - Codex (optional): pass `--format codex`; note that Codex requires the user
+    to trust hooks manually once via `/hooks`.
 - The steward's own folder: the harness's project instruction file there says
   "You are <name>; read ROLE.md and act by it." If the steward lives in the
   home folder itself, guard it: an instruction in that folder that applies only
@@ -112,8 +142,10 @@ rules. Only a quote counts.
 
 Use `tools/agent_mail.py` (stdlib-only Python; read its docstring) or, if the
 environment has a better native channel, build on that — but keep the same
-contract: **send(to, message)** that wakes or queues, **inbox**, **agents**, a
-journal, and a loop guard.
+contract: **send(to, message, why, why_this)** that wakes or queues (requiring
+non-empty `why` — what concrete action or decision is needed — and `why_this` —
+why this request instead of other options), **inbox**, **agents**, a journal,
+and a loop guard.
 
 1. Register the MCP server under the name **`agent-mail`** globally in every
    harness (the name matters: wake-ups pre-approve `mcp__agent-mail__send`).
@@ -124,6 +156,13 @@ journal, and a loop guard.
    command = "<py>"          # split launcher words into command + args
    args = ["<home>/tools/agent_mail.py", "mcp"]
    ```
+   Antigravity, `mcp_config.json` (UTF-8 without BOM):
+   ```json
+   {"mcpServers": {"agent-mail": {
+     "command": "<py>",
+     "args": ["<home>/tools/agent_mail.py", "mcp"]
+   }}}
+   ```
 2. Claude Code: add hooks so a session sees its mail and its session id is
    remembered for waking — merge into `~/.claude/settings.json` (back it up
    first, keep existing hooks):
@@ -133,8 +172,9 @@ journal, and a loop guard.
      "UserPromptSubmit": [{"hooks": [{"type": "command", "command": "<py> <home>/tools/agent_mail.py hook"}]}]
    }}
    ```
-   Harnesses without hooks (Codex, …) see mail only by calling `inbox` — the
-   shared rules tell every agent to do that at the start of a session.
+   Harnesses without mail hooks (or where hooks are not enabled) see mail by
+   calling `inbox` — the shared rules tell every agent to do that at the start
+   of a session.
 3. Choose the **wake mode** per agent with the person (see `mail/README.md`):
    `t3` under T3 Code; `claude` / `codex` for headless wake-up of the latest
    session; `inbox` when the person keeps sessions open themselves (safest).
