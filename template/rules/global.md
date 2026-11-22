@@ -281,7 +281,11 @@ server: `send` (to = "steward", an agent name or a folder), `inbox`, `agents`,
   about every step. Communication serves joint work, not hierarchical
   reporting; sending and waiting for a reply do not replace independent
   execution of the available part of the assignment.
-- {{STEWARD}} owns shared rules and its own shared tools. Other agents retain
+- {{STEWARD}} owns shared rules, agent harness wiring (host/T3 tools,
+  providers, delegation, hooks, skills, shared MCPs) and its own shared tools.
+  When you hit a failure, bug or friction in that harness or shared tooling,
+  write to {{STEWARD}} yourself with the exact error and context rather than
+  silently working around it or leaving it to the owner. Other agents retain
   ownership of their domains, including shared infrastructure. Write when a new
   circumstance requires action or a revised decision in that domain; include
   the general consequence when sharing a lesson across projects. Each agent
