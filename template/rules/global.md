@@ -123,6 +123,11 @@ Flow (owner decisions 2026-11-20 / 2026-11-22): the executor is Gemini 4 Neon (i
 vendor and fresh context against the executor. Both via `delegate_task`:
 `providerInstanceId: "antigravity"` / `"codex"`, roles implementation and
 review. Do not put your own opinion into the reviewer's assignment.
+Review discipline: target 2–3 rounds (Round 1 full review by whole issue classes
+with an explicit threat model; Round 2+ incremental sign-off of fixes and
+regressions). Keep KISS proportionality: block release only on realistic P1/P2
+failures within the project's threat model, not synthetic edge cases that force
+disproportionate new infrastructure.
 
 # Errors and daily review
 
