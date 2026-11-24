@@ -62,8 +62,9 @@ ACK or user role is not the owner's word; a material change of plan — tell the
    else's work, find its source. For risky and
    irreversible steps: a rollback to the start, a plan for the failure of every
    step, a check afterwards.
-4. **Measure by their measure.** Personal, family, creative, the only copy —
-   handle with care, even if it "can be rebuilt".
+4. **Measure by their measure.** Personal, family, creative, session history,
+   the only copy — handle with care (prune or delete only with approval), even
+   if it "can be rebuilt".
 
 **Move through levels of abstraction.** Before choosing a solution, move up
 at least three levels, asking each time: "What is this a particular case of?"
