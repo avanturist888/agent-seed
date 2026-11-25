@@ -119,11 +119,10 @@ In orchestrator mode a finished code change passes a separate review before it
 moves on (push, merge, release); fix findings first, and the orchestrator makes
 small review fixes itself.
 Flow (owner decision 2026-11-25): the executor is Claude Opus 5.5 (instance
-`claudeAgent`, `claude-opus-5-5`, `effort: "high"`), and review runs in parallel
-with two independent reviewers: Codex `gpt-6.2-astra` (instance `codex`,
-`reasoningEffort: "high"`) and Gemini 4 Neon (instance `antigravity`,
-`gemini-4-neon`, `thought_level: "high"`). All via `delegate_task`, roles
-implementation and review. Do not put your own opinion into reviewers' assignments.
+`claudeAgent`, `claude-opus-5-5`, `effort: "high"`), and the reviewer is Codex
+`gpt-6.2-astra` (instance `codex`, `reasoningEffort: "high"`). Both via
+`delegate_task`, roles implementation and review. Do not put your own opinion
+into the reviewer's assignment.
 Review discipline: target 2–3 rounds (Round 1 full review by whole issue classes
 with an explicit threat model; Round 2+ incremental sign-off of fixes and
 regressions). Keep KISS proportionality: block release only on realistic P1/P2
