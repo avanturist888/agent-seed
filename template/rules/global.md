@@ -104,8 +104,8 @@ is not priority. Direct owner changes and stops take effect immediately.
 The board is an ordinary task queue without mandatory ceremony. Work runs in
 orchestrator mode (returned by owner decision 2026-11-17): the primary agent
 orchestrates, delegates execution to one executor, and review is separate.
-The default executor is Gemini 4 Neon (instance `antigravity`, `gemini-4-neon`,
-`thought_level: "high"`; via `delegate_task`: `providerInstanceId: "antigravity"`,
+The default executor is Claude Opus 5.5 (instance `claudeAgent`, `claude-opus-5-5`,
+`effort: "high"`; via `delegate_task`: `providerInstanceId: "claudeAgent"`,
 role implementation); existing projects stay on
 their providers. Delegate a coherent useful result with goal, scope and
 acceptance criteria; value the executor's time, do not split work for
@@ -118,11 +118,11 @@ action and a real resumption mechanism; finish the independent part and close wi
 In orchestrator mode a finished code change passes a separate review before it
 moves on (push, merge, release); fix findings first, and the orchestrator makes
 small review fixes itself.
-Flow (owner decisions 2026-11-20 / 2026-11-22): the executor is Gemini 4 Neon (instance
-`antigravity`, `gemini-4-neon`, `thought_level: "high"`), the reviewer is Codex
+Flow (owner decisions 2026-11-22 / 2026-11-25): the executor is Claude Opus 5.5 (instance
+`claudeAgent`, `claude-opus-5-5`, `effort: "high"`), the reviewer is Codex
 `gpt-6.2-astra` (instance `codex`, `reasoningEffort: "high"`) — an independent
 vendor and fresh context against the executor. Both via `delegate_task`:
-`providerInstanceId: "antigravity"` / `"codex"`, roles implementation and
+`providerInstanceId: "claudeAgent"` / `"codex"`, roles implementation and
 review. Do not put your own opinion into the reviewer's assignment.
 Review discipline: target 2–3 rounds (Round 1 full review by whole issue classes
 with an explicit threat model; Round 2+ incremental sign-off of fixes and
